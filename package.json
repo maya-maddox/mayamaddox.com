@@ -35,6 +35,10 @@
 		"vite": "^5.0.3"
 	},
 	"lint-staged": {
-		"*.{js,ts,svelte}": "npm run lint:fix"
+		"*.{js,ts,svelte}": [
+			"npm run lint:fix",
+			"npm run format"
+		],
+		"!(*.js|*.ts|*.svelte)": "npm run format"
 	}
 }
