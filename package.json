@@ -41,5 +41,8 @@
 			"npm run format"
 		],
 		"!(*.js|*.ts|*.svelte)": "npm run format"
+	},
+	"dependencies": {
+		"lucide-svelte": "^0.462.0"
 	}
 }
