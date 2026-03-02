@@ -9,6 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.17.1"
+    "@astrojs/sitemap": "^3.7.0",
+    "@fontsource/inter": "^5.2.8",
+    "@iconify-json/lucide": "^1.2.94",
+    "@tailwindcss/vite": "^4.2.1",
+    "astro": "^5.17.1",
+    "astro-icon": "^1.1.5",
+    "motion": "^12.34.3",
+    "tailwindcss": "^4.2.1"
   }
 }
