@@ -11,6 +11,11 @@ const {
   title = "Maya Maddox — Full-Stack Engineer",
   description = "Full-stack engineer who likes building systems that just work. Based in the UK.",
 } = Astro.props;
+
+const canonicalURL = new URL(
+  Astro.url.pathname,
+  Astro.site || "https://mayamaddox.com",
+);
 ---
 
 <!doctype html>
@@ -19,10 +24,38 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta
+      property="og:image"
+      content={new URL("/og-image.jpg", Astro.site || "https://mayamaddox.com")}
+    />
+    <meta property="og:locale" content="en_GB" />
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <!-- JSON-LD -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Maya Maddox",
+        jobTitle: "Full-Stack Engineer",
+        url: Astro.site || "https://mayamaddox.com",
+      })}
+    />
 
     <script is:inline>
       const theme = (() => {
